@@ -11,7 +11,7 @@
             margin: 2% 30%;
             border: 1px solid red;
         } 
-        h1,h3 {
+        h1,h2 {
             text-align: center;
             color: red;
         }
@@ -28,12 +28,14 @@
 <body>
 
     <h1>Apollo Hospital</h1>
-    <h3>Hyderabad</h3>
+    <h2>Hyderabad</h2>
 
     <div id="main">
         <!-- <form> -->
             1. Doctors :
-            <h3 id="demo"></h3>
+            <center>
+                <h3 id="demo"></h3>
+            </center>
             2. Speciality
             <select id="special">
                 <option value="srinivas">Heart</option>
@@ -47,7 +49,7 @@
             <br />
             <br />
             3. day 
-            <select>
+            <select id="day">
                 <option>Monday</option>
                 <option>Tuesday</option>
                 <option>Wednesday</option>
@@ -76,7 +78,7 @@
             </select>
             <br/>
             <br />
-            <button onclick="find()">find the doctor</button>
+            <button onclick="find()">Book your slat</button>
         <!-- </form> -->
 
         <h3 id="booked"></h3>
@@ -91,12 +93,13 @@
 
     function find() {
         var name = document.getElementById("special").value;
+        var day = document.getElementById("day").value;
         var available = document.getElementById("available").value;
         var appointment = document.getElementById("appointment").value; 
         document.getElementById("demo").innerHTML = name;
         if(name !== available && name !== appointment){
             document.getElementById("booked").innerHTML = "Congratulations you have booked the appointement!";
-            document.getElementById("time").innerHTML = available+" and "+appointment;
+            document.getElementById("time").innerHTML = available+" and "+day+" "+appointment;
         }
         //document.getElementById("demo").innerHTML = document.getElementById("special").value;
         //alert(document.getElementById("special").value);
