@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main {
+            width: 40%;
+            margin: 2% 30%;
+            border: 1px solid red;
+        } 
+        h1,h3 {
+            text-align: center;
+            color: red;
+        }
+        button {
+            width: 200px;
+            margin: 0% 20%;
+            background-color: black;
+            color: white;
+            border-radius: 10%;
+            padding: 10px 0px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Apollo Hospital</h1>
+    <h3>Hyderabad</h3>
+
+    <div id="main">
+        <!-- <form> -->
+            1. Doctors :
+            <h3 id="demo"></h3>
+            2. Speciality
+            <select id="special">
+                <option value="srinivas">Heart</option>
+                <option value="balaji">Kidney</option>
+                <option value="venkata rathnam">Brain</option>
+                <option value="amarnath">Teeth</option>
+                <option value="madhusudhan">Skin</option>
+                <option value="aruna">Body Paina</option>
+                <option value="kalyani">Ladies special</option>
+            </select>
+            <br />
+            <br />
+            3. day 
+            <select>
+                <option>Monday</option>
+                <option>Tuesday</option>
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+                <option>Saturday</option>
+            </select>
+            <br/>
+            Note : Sunday is not working here
+            <br/>
+            <br />
+            4. Availability 
+            <select id="available">
+                <option>9:00 Am to 1:00 Pm</option>
+                <option>2:00 pm to 5:00 pm</option>
+                <option>6:00 pm to 10:00 pm</option>
+            </select>
+            <br />
+            <br />
+            4. Cost per Appointment
+            <select id="appointment">
+                <option>10 Minutes : 500 Rs</option>
+                <option>20 Minutes : 1000 Rs</option>
+                <option>30 Minutes : 1500 Rs</option>
+                <option>60 Minutes : 3000 Rs</option>
+            </select>
+            <br/>
+            <br />
+            <button onclick="find()">find the doctor</button>
+        <!-- </form> -->
+
+        <h3 id="booked"></h3>
+        <h3 id="time"></h3>
+            
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function find() {
+        var name = document.getElementById("special").value;
+        var available = document.getElementById("available").value;
+        var appointment = document.getElementById("appointment").value; 
+        document.getElementById("demo").innerHTML = name;
+        if(name !== available && name !== appointment){
+            document.getElementById("booked").innerHTML = "Congratulations you have booked the appointement!";
+            document.getElementById("time").innerHTML = available+" and "+appointment;
+        }
+        //document.getElementById("demo").innerHTML = document.getElementById("special").value;
+        //alert(document.getElementById("special").value);
+    }
+</script>
